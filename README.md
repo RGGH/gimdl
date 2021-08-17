@@ -12,7 +12,7 @@
 | Google API Key | https://console.developers.google.com |
 | pip install python-dotenv | https://pypi.org/project/python-dotenv/ |
 
-
-### Remember to add your environment file with your API key and CX code
+---
+#### Add your environment file with your Google API key and CX code in same directory as where you create your main.py
 ---
 ![env2](https://github.com/RGGH/Google_Image_Search_API2/blob/main/env_.png)
