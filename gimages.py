@@ -5,21 +5,16 @@
 from google_images_search import GoogleImagesSearch
 from dotenv import load_dotenv
 import os
-import sys
 
-# Once you've created them, save your API and CX in this format :
+# Once you've created them, save your API and CX / make an .env file in this format :
 # export DEVELOPER_KEY=QIzaSyD9G993bcg2049OxR0d9KOZNkjo8AdkMJc
 # export CX=9e25cccedd0ad4433
 
 # load the API key and CX code from .env file
-load_dotenv()
-
-# Check if search term provided
-if len(sys.argv) == 2:
-  searchfor = (sys.argv[1])
+if os.path.exists(".env"):
+  load_dotenv()
 else:
-    print("specify a search term eg: python3 gimages.py cat") 
-    sys.exit()
+  print(".env file missing, please create one with your API and CX")
 
 # create an 'ims' sub directory if it doesn't already exists
 if not os.path.exists('images/'):
@@ -37,11 +32,12 @@ def my_progressbar(url, progress):
 # create google images search - object
 gis = GoogleImagesSearch(DK, CX, progressbar_fn=my_progressbar)
 
-# using contextual mode (Curses)
-with GoogleImagesSearch(DK, CX) as gis:
+def fetch_images(searchfor):
+  # using contextual mode (Curses)
+  with GoogleImagesSearch(DK, CX) as gis:
     # define search params:
     _search_params = {"q": searchfor, 
-        "num": 10, 
+        "num": 15, 
         "safe": "high", 
         "fileType": "jpg",
         "imgType": "photo",
@@ -49,6 +45,5 @@ with GoogleImagesSearch(DK, CX) as gis:
         #  free for use by anyone for any purpose without restriction under copyright law
         }
     gis.search(search_params=_search_params, path_to_dir=spath)
-    gis.next_page()
 
-print("Done. Now check images folder")
+  print("Finished!")
