@@ -1,4 +1,4 @@
-## Python - Google-Images-Search 1.3.8
+## Python - Google-Images-Search & Downloader
 ---
 <span style="color:blue">Perform Google Image Search with Python Code Automatically</span></br>
 </br>
