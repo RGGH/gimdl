@@ -11,3 +11,5 @@
 | pip install Google-Images-Search | https://pypi.org/project/Google-Images-Search/ |
 | Google API Key | https://console.developers.google.com |
 | pip install python-dotenv | https://pypi.org/project/python-dotenv/ |
+
+![env2](https://github.com/RGGH/Google_Image_Search_API2/blob/main/_env.png)
